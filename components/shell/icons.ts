@@ -1,0 +1,37 @@
+import {
+  Atom,
+  Blocks,
+  BookOpenCheck,
+  Building2,
+  Clapperboard,
+  Coins,
+  KeyRound,
+  Landmark,
+  LayoutDashboard,
+  Rocket,
+  Route,
+  Scale,
+  ShieldCheck,
+  Split,
+  TriangleAlert,
+  type LucideIcon,
+} from "lucide-react";
+
+// Maps the icon names used in content/modules.ts to components.
+export const moduleIcons: Record<string, LucideIcon> = {
+  Atom,
+  Blocks,
+  BookOpenCheck,
+  Building2,
+  Clapperboard,
+  Coins,
+  KeyRound,
+  Landmark,
+  LayoutDashboard,
+  Rocket,
+  Route,
+  Scale,
+  ShieldCheck,
+  Split,
+  TriangleAlert,
+};

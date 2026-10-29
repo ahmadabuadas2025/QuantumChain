@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* Theme is driven by data-theme on <html>; "system" resolves before paint in ThemeScript. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  /* Light: paper-white console */
+  --bg: #f3f6fa;
+  --panel: #ffffff;
+  --panel-2: #eaf0f6;
+  --rule: #d3dde8;
+  --ink: #0c1d31;
+  --muted: #4a6079;
+  --accent: #0a7c71;
+  --accent-ink: #ffffff;
+  --accent-soft: #d6f1ed;
+  --risk-red: #c43b45;
+  --risk-amber: #a86a00;
+  --risk-green: #1f8a52;
+  --label-fact: #0a7c71;
+  --label-estimate: #a86a00;
+  --label-position: #6d4fd1;
+  --label-scenario: #4a6079;
+  --old-lane: #8a5a2b;
+  --new-lane: #0a7c71;
+  --focus: #1b6fd8;
+}
+
+:root[data-theme="dark"] {
+  /* Dark: deep navy console */
+  --bg: #08162a;
+  --panel: #0f2139;
+  --panel-2: #142b48;
+  --rule: #213d61;
+  --ink: #e3ebf5;
+  --muted: #93a9c4;
+  --accent: #2ec4b2;
+  --accent-ink: #04211d;
+  --accent-soft: #113b43;
+  --risk-red: #f2717b;
+  --risk-amber: #f1b84a;
+  --risk-green: #46cf8b;
+  --label-fact: #2ec4b2;
+  --label-estimate: #f1b84a;
+  --label-position: #b39dff;
+  --label-scenario: #93a9c4;
+  --old-lane: #e2a66b;
+  --new-lane: #2ec4b2;
+  --focus: #7cb6ff;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-rule: var(--rule);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-risk-red: var(--risk-red);
+  --color-risk-amber: var(--risk-amber);
+  --color-risk-green: var(--risk-green);
+  --color-old: var(--old-lane);
+  --color-new: var(--new-lane);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.prose-qc {
+  max-width: 72ch;
+}
+.prose-qc p + p {
+  margin-top: 0.75rem;
+}
+
+/* Hashes and keys are real hex data, so they get the mono face. */
+.hex {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.85em;
+  word-break: break-all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
